@@ -1,14 +1,18 @@
 const A = 3;
 const B = 8;
 
-const calc = (numA, numB, callback) => {
-    return callback(numA, numB)
+let calc = (numA, numB, callback) => {
+    if (typeof callback === 'function') {
+        return callback(numA, numB)
+    } else {
+        console.log('Please provide a function');
+    }
 }
 
-const add = (numA, numB) => {
+let add = (numA, numB) => {
     return numA + numB;
 }
-const multi = (numA, numB) => {
+let multi = (numA, numB) => {
     return numA * numB;
 }
 
